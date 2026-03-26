@@ -45,3 +45,30 @@ Once the backend is running, visit:
 - CORS configuration
 - Input sanitization & validation with `express-validator`
 - JWT stored securely and verified on each protected request
+
+
+🔗 Live Frontend:
+https://task-todo-ashy.vercel.app/login
+
+🔗 Backend API:
+https://tasktodo-bioe.onrender.com
+
+📄 API Documentation:
+https://tasktodo-bioe.onrender.com/api-docs/
+
+💻 GitHub Repository:
+https://github.com/anasali79/TaskTodo
+
+login id pass ---
+
+user 
+email --- test@test.com
+pass --- 123456
+
+admin 
+email--- test@test.comm
+pass ---- 123456
+
+
+Scalability note ---- in root file 
+
