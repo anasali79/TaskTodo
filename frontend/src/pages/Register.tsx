@@ -27,7 +27,7 @@ const Register: React.FC = () => {
 
     try {
       // Correcting the route to /api/v1/users
-      const { data } = await API.post('/users', {
+      const { data } = await API.post('users', {
         name,
         email,
         password,

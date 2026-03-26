@@ -25,7 +25,7 @@ const Login: React.FC = () => {
 
     try {
       // Correcting the route to /api/v1/users/login
-      const { data } = await API.post('/users/login', {
+      const { data } = await API.post('users/login', {
         email,
         password,
       });

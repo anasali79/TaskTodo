@@ -33,7 +33,7 @@ const Dashboard: React.FC = () => {
 
   const fetchTasks = async () => {
     try {
-      const { data } = await API.get('/tasks');
+      const { data } = await API.get('tasks');
       setTasks(Array.isArray(data) ? data : []);
       setError('');
     } catch (err: any) {
@@ -66,9 +66,9 @@ const Dashboard: React.FC = () => {
     try {
 
       if (editingTask) {
-        await API.put(`/tasks/${editingTask._id}`, formData);
+        await API.put(`tasks/${editingTask._id}`, formData);
       } else {
-        await API.post('/tasks', formData);
+        await API.post('tasks', formData);
       }
       fetchTasks();
       setIsModalOpen(false);
@@ -80,7 +80,7 @@ const Dashboard: React.FC = () => {
   const handleDelete = async (id: string) => {
     if (!window.confirm('Erase this system node permanently?')) return;
     try {
-      await API.delete(`/tasks/${id}`);
+      await API.delete(`tasks/${id}`);
       fetchTasks();
     } catch (err) {
       setError('Erase Protocol failed.');
