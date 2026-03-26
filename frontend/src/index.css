@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== ORIGINAL DESIGN SYSTEM: WHITE & INDIGO ========== */
+
+:root {
+  --brand-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  --surface-gradient: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(226, 232, 240, 0.6);
+}
+
+/* ========== BASE STYLES ========== */
+
+body {
+  @apply bg-surface-50 text-surface-900 font-sans;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.08), transparent),
+    var(--surface-gradient);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: rgba(99, 102, 241, 0.2);
+  color: #312e81;
+}
+
+/* ========== CUSTOM SCROLLBAR ========== */
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-surface-300/40 rounded-full hover:bg-brand-500/40 transition-colors; }
+
+/* ========== COMPONENT UTILITIES ========== */
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply px-5 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold rounded-xl 
+           transition-all duration-200 shadow-brand active:scale-95;
+    background: var(--brand-gradient);
+  }
+
+  .btn-secondary {
+    @apply px-5 py-2.5 bg-white hover:bg-surface-50 text-surface-700 font-semibold rounded-xl 
+           border border-surface-200 shadow-sm transition-all duration-200 active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2 text-surface-500 hover:text-surface-900 hover:bg-surface-100/80 rounded-xl transition-all;
+  }
+
+  /* Inputs */
+  .input-standard {
+    @apply w-full px-4 py-3 text-sm bg-white border border-surface-200 rounded-xl 
+           focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500/50 
+           outline-none transition-all duration-200 placeholder:text-surface-400;
+  }
+
+  /* Cards */
+  .card-premium {
+    @apply bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-card border border-white/60 
+           hover:shadow-brand transition-all duration-300;
+  }
+
+  /* Glass Navbar */
+  .nav-glass {
+    @apply sticky top-0 bg-white/70 backdrop-blur-xl border-b border-surface-200/60 z-50;
+  }
+
+  /* Brand Text */
+  .text-brand {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--brand-gradient);
+  }
+
+  /* Status Badges */
+  .badge { @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-bold uppercase tracking-wider border; }
+  .badge-todo { @apply bg-surface-50 text-surface-500 border-surface-200; }
+  .badge-progress { @apply bg-brand-50 text-brand-600 border-brand-200; }
+  .badge-done { @apply bg-teal-50 text-teal-600 border-teal-200; }
+}
